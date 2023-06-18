@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>ON3OARD</title>
+</head>
+<body>
+
+    <div class ="menu">
+        <ul>
+            <li><a href="Homepage.html">Home</a></li>
+            <li><a href="History.html">History</a></li>
+            <li><a href="Programs.html">Program</a></li>
+            <li><a href="Login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <section class = "showcase" id="Home">
+        <header>
+            <h2 class ="logo">INTRATOUR</h2>   
+            <div class="toggle"></div>
+        </header>
+        
+        <img id="imgHistory" src="./Asset/BackgroundLogin.png" alt="">
+
+        <div class="overlay"></div>
+
+        <div class="Login-container">
+            <div class="Login-heading">
+                <h1>Login</h1>
+            </div>
+            <div class="Login-form">
+                <form id="Form" action="">
+                    <div class="Register-input">
+                        <input type="text" id="fullname" name="fullname" placeholder="Full Name">
+                    </div>
+                    <div class="Register-input">
+                        <input type="text" id="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="Register-input">
+                        <input type="password" id="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="Register-gender">
+                        <div class="man">
+                            <input type="radio" name="gender" id="gender-male">Laki-Laki
+                        </div>
+                        <div class="women">
+                            <input type="radio" name="gender" id="gender-female">Perempuan
+                        </div>
+                    </div>
+                    <div class="Register-input">
+                        <textarea name="address" id="address" placeholder="Address"></textarea>
+                    </div>
+                    <div class="Register-checkbox">
+                        <input type="checkbox" name="newsletter" id="newsletter">Notifikasi
+                    </div>
+                    <div class="btn">
+                        <button class="submitBtn" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <ul class ="social">
+            <li>
+                <a href="https://www.facebook.com">
+                    <img src="\On3oard\Asset\Facebook.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com">
+                    <img src="\On3oard\Asset\Instagram.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.twitter.com">
+                    <img src="\On3oard\Asset\Twitter.png" alt="">
+                </a>
+            </li>
+        </ul>
+
+    </section>
+</body>
+    <script>
+        const menuToggle = document.querySelector('.toggle');
+        const showcase = document.querySelector('.showcase');
+
+        menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        showcase.classList.toggle('active');
+        });
+
+        const names = document.getElementById('fullname');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const address = document.getElementById('address')
+        const form = document.getElementById('Form');
+        
+        form.addEventListener('submit',(e) => {
+            let message = [];
+
+            if(names.value === '' || names.value == null)
+            {
+                alert('Name is Required !!!');
+                return;
+            }
+
+            if(email.value === '' || email.value == null)
+            {
+                alert('Email is Required !!!');
+                return;
+            }
+
+            if(address.value === '' || address.value == null)
+            {
+                alert('Address is Required !!!');
+                return;
+            }
+
+
+            if(password.value <= 6 )
+            {
+                alert('Password need to be longer than 6 character');
+                return;
+            }
+
+            if(password.value >= 20 )
+            {
+                alert('Password need to be less than 20 character');
+                return;
+            }
+            alert("Submit Berhasil");
+
+            window.location.href = "Home.html";
+            e.preventDefault();
+        });
+    </script>
+</html>

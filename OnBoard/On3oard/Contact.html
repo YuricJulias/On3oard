@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>INTRATOUR</title>
+</head>
+<body>
+
+    <div class ="menu">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="History.html">History</a></li>
+            <li><a href="Programs.html">Program</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="Login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <section class = "showcase" id="Home">
+        <header>
+            <h2 class ="logo">INTRATOUR</h2>   
+            <div class="toggle"></div>
+        </header>
+        
+        <img id="imgHistory" src="/Asset/BackgroundContact.png" alt="">
+
+        <div class="overlay"></div>
+
+        <div class="Contact-content">
+            <div class="Contact-heading">
+                <h1>HUBUNGI KAMI</h1>
+            </div>
+            <div class="contact-form">
+                <form id="Form" action="">
+                    <div class="Contact-input">
+                        <input type="text" id="firstname" name="firstname" placeholder="First Name">
+                    </div>
+                    <div class="Contact-input">
+                        <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+                    </div>
+                    <div class="Contact-input">
+                        <input type="text" id="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="Contact-input">
+                        <textarea name="description" id="description" placeholder="Description"></textarea>
+                    </div>
+                    <div class="btn">
+                        <button class="submitBtn" type="submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <ul class ="social">
+            <li>
+                <a href="#">
+                    <img src="../Website/Asset/Facebook.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../Website/Asset/Instagram.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../Website/Asset/Twitter.png" alt="">
+                </a>
+            </li>
+        </ul>
+
+    </section>
+</body>
+    <script>
+        const menuToggle = document.querySelector('.toggle');
+        const showcase = document.querySelector('.showcase');
+
+        menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        showcase.classList.toggle('active');
+        })
+
+        const firstname = document.getElementById('firstname');
+        const lastname = document.getElementById('lastname');
+        const email = document.getElementById('email');
+        const form = document.getElementById('Form');
+
+        form.addEventListener('submit',(e) => {
+            let message = [];
+
+            if(firstname.value === '' || firstname.value == null)
+            {
+                alert('First Name is Required !!!');
+                return;
+            }
+
+            if(lastname.value === '' || lastname.value == null)
+            {
+                alert('Last Name is Required !!!');
+                return;
+            }
+
+            if(email.value === '' || email.value == null)
+            {
+                alert('Email is Required !!!');
+                return;
+            }
+
+            alert("Terima Kasih Telah Menghubungi Kami");
+
+            window.location.href = "Home.html";
+            e.preventDefault();
+        });
+
+    </script>
+</html>

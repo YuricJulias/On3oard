@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>ON3OARD</title>
+</head>
+<body>
+
+    <div class ="menu">
+        <ul>
+            <li><a href="Homepage.html">Home</a></li>
+            <li><a href="History.html">History</a></li>
+            <li><a href="Programs.html">Program</a></li>
+            <li><a href="Login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <section class = "showcase" id="Home">
+        <header>
+            <h2 class ="logo">ON3OARD</h2>   
+            <div class="toggle"></div>
+        </header>
+        
+        <img id="imgHistory" src="E\On3oard\Asset\Homepage\Background_HomePage.png" alt="">
+
+        <div class="overlay"></div>
+
+        <div class="Contact-content">
+            <div class="Contact-heading">
+                <h1>Pembelian Tiket</h1>
+            </div>
+            <div class="contact-form">
+                <form id="Form" action="">
+                    <div class="Contact-input">
+                        <input type="text" id="Asal" name="Asal" placeholder="Asal">
+                    </div>
+                    <div class="Contact-input">
+                        <input type="text" id="Tujuan" name="Tujuan" placeholder="Tujuan">
+                    </div>
+                    <div class="Contact-input">
+                        <input type="text" id="Tanggal" name="Tanggal" placeholder="Tanggal Keberangkatan">
+                    </div>
+                    <div class="Contact-input">
+                        <input type="text" id="Dewasa" name="Dewasa" placeholder="Dewasa">
+                    </div>
+                    <div class="Contact-input">
+                        <input type="text" id="Bayi" name="Bayi" placeholder="Bayi">
+                    </div>
+                    <div class="btn">
+                        <button class="submitBtn" type="submit">Beli Tiket</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <ul class ="social">
+            <li>
+                <a href="https://www.facebook.com">
+                    <img src="\On3oard\Asset\Facebook.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com">
+                    <img src="\On3oard\Asset\Instagram.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.twitter.com">
+                    <img src="\On3oard\Asset\Twitter.png" alt="">
+                </a>
+            </li>
+        </ul>
+
+    </section>
+</body>
+    <script>
+        const menuToggle = document.querySelector('.toggle');
+        const showcase = document.querySelector('.showcase');
+
+        menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        showcase.classList.toggle('active');
+        })
+
+        const Asal = document.getElementById('Asal');
+        const Tujuan = document.getElementById('Tujuan');
+        const Tanggal = document.getElementById('Tanggal');
+        const Dewasa = document.getElementById('Dewasa');
+        const Bayi = document.getElementById('Bayi');
+
+        form.addEventListener('submit',(e) => {
+            let message = [];
+
+            if(Asal.value === '' || Asal.value == null)
+            {
+                alert('Kolom Asal masih Kosong !!!');
+                return;
+            }
+
+            if(Tujuan.value === '' || Tujuan.value == null)
+            {
+                alert('Kolom Tujuan masih Kosong !!!');
+                return;
+            }
+
+            if(Tanggal.value === '' || Tanggal.value == null)
+            {
+                alert('Kolom Tanggal masih Kosong !!!');
+                return;
+            }
+            if(Dewasa.value === '' || Dewasa.value == null)
+            {
+                alert('Kolom Dewasa masih Kosong !!!');
+                return;
+            }
+            if(Bayi.value === '' || Bayi.value == null)
+            {
+                alert('Kolom Bayi masih Kosong !!!');
+                return;
+            }
+
+            alert("Terima Kasih Sudah Membeli Tiket");
+
+            window.location.href = "Homepage.html";
+            e.preventDefault();
+        });
+    </script>
+</html>
